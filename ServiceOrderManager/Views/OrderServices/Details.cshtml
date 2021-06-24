@@ -1,0 +1,66 @@
+﻿@model ServiceOrderManager.Models.OrderService
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderService</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalControlOS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InternalControlOS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Initial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Initial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Finish)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Finish)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Prevision)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Prevision)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Value)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

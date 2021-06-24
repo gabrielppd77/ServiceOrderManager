@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ServiceOrderManager.Data;
 
 namespace ServiceOrderManager
 {
@@ -33,6 +35,10 @@ namespace ServiceOrderManager
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ServiceOrderManagerContext>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("ServiceOrderManagerContext"), builder =>
+                    builder.MigrationsAssembly("ServiceOrderManager")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +50,7 @@ namespace ServiceOrderManager
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/OrderService/Error");
                 app.UseHsts();
             }
 
@@ -56,7 +62,7 @@ namespace ServiceOrderManager
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=OrderServices}/{action=Index}/{id?}");
             });
         }
     }
