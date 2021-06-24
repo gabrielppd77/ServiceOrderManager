@@ -20,13 +20,11 @@ namespace ServiceOrderManager.Models
         {
         }
 
-        public OrderService(int id, string description, int internalControlOS, DateTime initial, DateTime finish, DateTime prevision, Equipment equipment, double value, Status status, Priority priority)
+        public OrderService(int id, string description, DateTime prevision, Equipment equipment, double value, Status status, Priority priority)
         {
             Id = id;
-            Description = description;
-            InternalControlOS = internalControlOS;
-            Initial = initial;
-            Finish = finish;
+            Description = description;      
+            Initial = DateTime.Now;
             Prevision = prevision;
             Equipment = equipment;
             Value = value;
