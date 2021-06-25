@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ServiceOrderManager.Data;
+using ServiceOrderManager.Services;
 
 namespace ServiceOrderManager
 {
@@ -41,6 +42,8 @@ namespace ServiceOrderManager
                     builder.MigrationsAssembly("ServiceOrderManager")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<EquipmentService>();
+            services.AddScoped<OrderServiceService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
